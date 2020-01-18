@@ -3,6 +3,9 @@ const { expect } = require ('chai');
 const email = Math.random()+ 'ara8977@gmail.com';
 const password = '11111';
 
+
+
+
 describe('Register page', () => {
     before(() => {
         browser.url('https://stage.pasv.us/user/register')
