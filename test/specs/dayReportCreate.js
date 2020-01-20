@@ -1,5 +1,5 @@
 const { expect } = require ('chai');
-const {URL_LOGIN, URL_ADMIN_LOGIN,URL_DIARY, adminDialyReports,pageRegisterSelectors, pageDiaryCreate,} = require ('./register_data');
+const {URL_LOGIN, URL_ADMIN_LOGIN,adminDialyReports,pageRegisterSelectors, pageDiaryCreate,} = require ('./register_data');
 
 describe('login as admin', () => {
 it('should have the rigth title', () => {
