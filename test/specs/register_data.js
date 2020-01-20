@@ -3,6 +3,7 @@ const HOST = 'https://stage.pasv.us';
 const URL_REGISTER = `${HOST}/user/register`;
 const URL_LOGIN = `${HOST}/user/login`;
 const URL_ADMIN_LOGIN = `${HOST}/diary`;
+const URL_DIARY = `${HOST}/diary/create`;
 
 const email = Math.random()+ 'ara8977@gmail.com';
 const user = {
