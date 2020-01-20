@@ -13,7 +13,7 @@ it('should have the rigth title', () => {
 
 /*--------------------------------------------------------*/
 
-describe('diary', () => {
+describe('Profile', () => {
     browser.url(URL_ADMIN_LOGIN);
     it('should hav the right title', () => {
         const actualH1Title = browser.getTitle();
@@ -51,15 +51,20 @@ describe('diary', () => {
         const element = $(pageRegisterSelectors.hoursInput);
         element.setValue(pageDiaryCreate.hours);
     });
-    it('choose how many hours you studied / practiced',  () => {
+    it('write how the day went',  () => {
         const element = $(pageRegisterSelectors.howWasYourDay);
         element.setValue(pageDiaryCreate.description);
-        browser.pause(5000);
+        browser.pause(2000);
     });
-    it('choose how many hours you studied / practiced',  () => {
+    it('select one or more items',  () => {
         const element = $(pageRegisterSelectors.dailyReportInput);
         element.click();
-        browser.pause(5000);
+        browser.pause(2000);
+    });
+    it('should  click Submit save',  () => {
+        const element = $(pageRegisterSelectors.submitButton);
+        element.click();
+        browser.pause(5000)
     });
 });
 

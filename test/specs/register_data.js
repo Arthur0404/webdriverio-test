@@ -1,6 +1,5 @@
 const HOST = 'https://stage.pasv.us';
 
-
 const URL_REGISTER = `${HOST}/user/register`;
 const URL_LOGIN = `${HOST}/user/login`;
 const URL_ADMIN_LOGIN = `${HOST}/diary`;
@@ -33,7 +32,7 @@ const pageRegisterSelectors ={
     moraleLevelInput : 'form select[name="morale"]',
     hoursInput: 'form input[name="hours"]',
     howWasYourDay: 'form textarea[name="description"]',
-    dailyReportInput: 'form input[name="I need help"]',
+    dailyReportInput: 'form input[type="checkbox"]',
 }
 
 const pageRegister = {
