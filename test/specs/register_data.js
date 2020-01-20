@@ -32,7 +32,11 @@ const pageRegisterSelectors ={
     moraleLevelInput : 'form select[name="morale"]',
     hoursInput: 'form input[name="hours"]',
     howWasYourDay: 'form textarea[name="description"]',
-    dailyReportInput: 'form input[type="checkbox"]',
+    dailyReportInput: 'form input[label="Watched lectures"]',
+    dailyReportInput1: 'form input[label="I understood everything"]',
+    dailyReportInput2: 'form input[label="Read documentation"]',
+    dailyReportInput3: 'form input[label="I need help"]',
+
 }
 
 const pageRegister = {
@@ -48,7 +52,7 @@ const pageLogin = {
 };
 
 const pageConfirmation = {
-    h1 : 'You are a new user',
+    h1: 'You are a new user',
 };
 
 const adminDialyReports = {
