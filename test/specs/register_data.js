@@ -3,6 +3,9 @@ const HOST = 'https://stage.pasv.us';
 
 const URL_REGISTER = `${HOST}/user/register`;
 const URL_LOGIN = `${HOST}/user/login`;
+const URL_ADMIN_LOGIN = `${HOST}/diary`;
+const URL_DIARY = `${HOST}/diary/create`;
+
 const email = Math.random()+ 'ara8977@gmail.com';
 const user = {
     firstName : 'Artur',
@@ -27,6 +30,10 @@ const pageRegisterSelectors ={
     aboutInput : 'form textarea[name="about"]',
     goalsInput :'form textarea[name="goals"]',
     englishLevelInput :'form select[name="englishLevel"]',
+    moraleLevelInput : 'form select[name="morale"]',
+    hoursInput: 'form input[name="hours"]',
+    howWasYourDay: 'form textarea[name="description"]',
+    dailyReportInput: 'form input[name="I need help"]',
 }
 
 const pageRegister = {
@@ -45,4 +52,15 @@ const pageConfirmation = {
     h1 : 'You are a new user',
 };
 
-module.exports = {URL_REGISTER, URL_LOGIN, user, pageRegisterSelectors,pageRegister,pageLogin, pageConfirmation};
+const adminDialyReports = {
+    title: 'Progress Monitor',
+    h1 : 'Artur Badmaev',
+};
+const pageDiaryCreate = {
+    h1: 'Create day report',
+    morale: '10 – I am pleased with everything!',
+    hours: '10',
+    description: 'Сегодня проделал большую работу',
+};
+
+module.exports = {URL_REGISTER, URL_LOGIN, URL_ADMIN_LOGIN, URL_DIARY, user, pageRegisterSelectors,pageRegister,pageLogin, pageConfirmation, adminDialyReports, pageDiaryCreate,};

@@ -10,7 +10,7 @@ describe('Register page', () => {
         expect(actualTitle).equal(pageRegister.title);
 
     })
-    it('should have a correct title ',  () => {
+    it('should hav a correct title ',  () => {
         const actual = $(pageRegisterSelectors.h1).getText();
         const expected = pageRegister.h1;
        expect(actual).equal(expected);

@@ -1,5 +1,5 @@
 const { expect } = require ('chai');
-const {URL_LOGIN} = require ('./register_data');
+const {URL_LOGIN, URL_ADMIN_LOGIN,URL_DIARY, adminDialyReports,pageRegisterSelectors, pageDiaryCreate,} = require ('./register_data');
 
 describe('login as admin', () => {
 it('should have the rigth title', () => {
@@ -10,5 +10,59 @@ it('should have the rigth title', () => {
     browser.pause(5000);
     });
 });
+
+/*--------------------------------------------------------*/
+
+describe('diary', () => {
+    browser.url(URL_ADMIN_LOGIN);
+    it('should hav the right title', () => {
+        const actualH1Title = browser.getTitle();
+        expect(actualH1Title).equal(adminDialyReports.title);
+    });
+
+    it('should hav a correct title ',  () => {
+        const actualH1Text = $(pageRegisterSelectors.h1).getText();
+        const expectedH1Text = adminDialyReports.h1;
+        expect(actualH1Text).equal(expectedH1Text);
+    });
+
+    /*----------------------------------------------------------------*/
+
+    it('should redirect to Diary page', () => {
+        const diaryLink = '//div[@id="site-menu"]/ul/li/a[contains(text(),"Diary")]';
+        $(diaryLink).click();
+    });
+
+    it('should redirect to Create a day report page', () => {
+        const diaryReport = '//a[(text()="Create day report")]';
+        $(diaryReport).click();
+    });
+
+    it('should hav a correct title', () => {
+        const actual = $(pageRegisterSelectors.h1).getText();
+        const expected = pageDiaryCreate.h1;
+        expect(actual).equal(expected);
+    })
+    it('must choose what morale',  () => {
+        const element = $(pageRegisterSelectors.moraleLevelInput);
+        element.selectByVisibleText(pageDiaryCreate.morale);
+    });
+    it('choose how many hours you studied / practiced',  () => {
+        const element = $(pageRegisterSelectors.hoursInput);
+        element.setValue(pageDiaryCreate.hours);
+    });
+    it('choose how many hours you studied / practiced',  () => {
+        const element = $(pageRegisterSelectors.howWasYourDay);
+        element.setValue(pageDiaryCreate.description);
+        browser.pause(5000);
+    });
+    it('choose how many hours you studied / practiced',  () => {
+        const element = $(pageRegisterSelectors.dailyReportInput);
+        element.click();
+        browser.pause(5000);
+    });
+});
+
+
 
 
