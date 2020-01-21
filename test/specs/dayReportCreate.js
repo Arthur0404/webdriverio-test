@@ -9,7 +9,7 @@ it('should have the rigth title', () => {
     $('form button[type="submit"]').click();
     browser.pause(1000);
     });
-});
+})
 
 /*--------------------------------------------------------*/
 
@@ -81,6 +81,12 @@ describe('Profile', () => {
         const element = $(pageRegisterSelectors.submitButton);
         element.click();
         browser.pause(5000)
+    });
+    it('checking the message about creating a daily report',  () => {
+        const elementH4 = browser.$('//h4[@class="notification-title"]').getText();
+        const expected = 'Diary created';
+        expect(elementH4).equal(expected);
+        browser.pause(2000);
     });
 });
 

@@ -37,6 +37,7 @@ const pageRegisterSelectors ={
     dailyReportInput2: 'form input[label="Read documentation"]',
     dailyReportInput3: 'form input[label="I need help"]',
 
+
 }
 
 const pageRegister = {
