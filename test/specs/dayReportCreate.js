@@ -20,12 +20,13 @@ describe('Profile', () => {
         expect(actualH1Title).equal(adminDialyReports.title);
     });
 
-    it('should hav a correct title ',  () => {
+    it('should hav a correct title ', () => {
         const actualH1Text = $(pageRegisterSelectors.h1).getText();
         const expectedH1Text = adminDialyReports.h1;
         expect(actualH1Text).equal(expectedH1Text);
 
     });
+});
 
     /*----------------------------------------------------------------*/
 
@@ -38,6 +39,8 @@ describe('Profile', () => {
     it('should redirect to Create a day report page', () => {
         const diaryReport = '//a[(text()="Create day report")]';
         $(diaryReport).click();
+        const actualUrl = browser.getUrl();
+        expect(actualUrl).eq()
         browser.pause(1000)
     });
 
@@ -88,7 +91,7 @@ describe('Profile', () => {
         expect(elementH4).equal(expected);
         browser.pause(2000);
     });
-});
+
 
 
 

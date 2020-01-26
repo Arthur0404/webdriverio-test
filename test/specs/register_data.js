@@ -5,6 +5,7 @@ const URL_LOGIN = `${HOST}/user/login`;
 const URL_ADMIN_LOGIN = `${HOST}/diary`;
 const URL_DIARY = `${HOST}/diary/create`;
 
+
 const email = Math.random()+ 'ara8977@gmail.com';
 const user = {
     firstName : 'Artur',
@@ -58,7 +59,7 @@ const pageConfirmation = {
 
 const adminDialyReports = {
     title: 'Progress Monitor',
-    h1 : 'Artur Badmaev',
+     h1 : 'Artur Badmaev',
 };
 const pageDiaryCreate = {
     h1: 'Create day report',
@@ -66,5 +67,7 @@ const pageDiaryCreate = {
     hours: '10',
     description: 'Сегодня проделал большую работу',
 };
+
+
 
 module.exports = {URL_REGISTER, URL_LOGIN, URL_ADMIN_LOGIN, URL_DIARY, user, pageRegisterSelectors,pageRegister,pageLogin, pageConfirmation, adminDialyReports, pageDiaryCreate,};

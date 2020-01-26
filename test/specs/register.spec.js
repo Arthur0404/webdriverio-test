@@ -114,6 +114,7 @@ describe('Register page', () => {
         expect(actualH1Text).equal(expectedH1Text);
         browser.pause(2000);
     });
+
 });
 
 
