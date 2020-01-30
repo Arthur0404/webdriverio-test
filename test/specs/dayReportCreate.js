@@ -12,7 +12,6 @@ it('should have the rigth title', () => {
 })
 
 /*--------------------------------------------------------*/
-
 describe('Profile', () => {
     browser.url(URL_ADMIN_LOGIN);
     it('should hav the right title', () => {
