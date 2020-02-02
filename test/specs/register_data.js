@@ -6,10 +6,10 @@ const URL_ADMIN_LOGIN = `${HOST}/diary`;
 const URL_DIARY = `${HOST}/diary/create`;
 
 
-const email = Math.random()+ 'ara8977@gmail.com';
+const email = Math.random() + 'ara8977@gmail.com';
 const user = {
-    firstName : 'Artur',
-    lastName : 'Badmaev',
+    firstName : 'Admin',
+    lastName : 'Adminov',
     password :'11111',
     phone : '14285634878',
     email,
@@ -37,9 +37,7 @@ const pageRegisterSelectors ={
     dailyReportInput1: 'form input[label="I understood everything"]',
     dailyReportInput2: 'form input[label="Read documentation"]',
     dailyReportInput3: 'form input[label="I need help"]',
-
-
-}
+};
 
 const pageRegister = {
     title :  'Progress Monitor',
@@ -57,17 +55,7 @@ const pageConfirmation = {
     h1: 'You are a new user',
 };
 
-const adminDialyReports = {
-    title: 'Progress Monitor',
-     h1 : 'Artur Badmaev',
-};
-const pageDiaryCreate = {
-    h1: 'Create day report',
-    morale: '10 – I am pleased with everything!',
-    hours: '10',
-    description: 'Сегодня проделал большую работу',
-};
 
 
 
-module.exports = {URL_REGISTER, URL_LOGIN, URL_ADMIN_LOGIN, URL_DIARY, user, pageRegisterSelectors,pageRegister,pageLogin, pageConfirmation, adminDialyReports, pageDiaryCreate,};
+module.exports = {URL_REGISTER, URL_LOGIN, URL_ADMIN_LOGIN, URL_DIARY, user, pageRegisterSelectors,pageRegister,pageLogin, pageConfirmation, };
