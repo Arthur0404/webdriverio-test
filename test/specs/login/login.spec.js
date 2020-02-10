@@ -17,17 +17,17 @@ describe('LOGIN (positive)', () => {
         LoginPage.email.setValue('admin@test.com');
     });
 
-    it('should fill uot password field', () =>{
+    it('should fill out password field', () => {
         LoginPage.password.setValue('11111');
     });
-    it('should submit form', () =>{
+
+    it('should submit form', () => {
         LoginPage.submitBTN.click();
         browser.pause(5000);
     });
 
-    it('should check h1 text', () =>{
+    it('should check h1 text', () => {
        expect(ProfilePage.h1.getText()).eq('Admin Adminov')
     });
-
 });
 

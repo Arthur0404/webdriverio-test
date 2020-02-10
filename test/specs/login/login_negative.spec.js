@@ -20,14 +20,14 @@ describe('LOGIN (negative)', () => {
     it('should fill uot password field', () =>{
         LoginPage.password.setValue('11111+');
     });
+
     it('should submit form', () =>{
         LoginPage.submitBTN.click();
         browser.pause(5000);
     });
 
     it('should check h1 text', () =>{
-        expect(ProfilePage.h1.getText()).eq('User Login')
+        expect(ProfilePage.h1.getText()).eq('User Login');
     });
-
 });
 

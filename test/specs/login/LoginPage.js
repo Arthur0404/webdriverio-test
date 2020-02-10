@@ -1,20 +1,19 @@
 import Page from "../Page";
 
 class LoginPage extends Page{
-        //email = browser.$('//input[@name="email"]');
 
-        get email (){
+        get email () {
             return browser.$('//input[@name="email"]');
         }
 
-        get password (){
+        get password () {
             return browser.$('//input[@name="password"]');
         }
 
-        get submitBTN (){
+        get submitBTN () {
             return browser.$('//button[@type="submit"]');
         }
-        get h1 (){
+        get h1 () {
             return browser.$('//h1');
         }
 
@@ -26,7 +25,7 @@ class LoginPage extends Page{
          browser.pause(5000);
     }
 
-    open(){
+    open() {
         super.open('https://stage.pasv.us/user/login');
     }
 }

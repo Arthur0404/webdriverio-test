@@ -102,20 +102,20 @@ describe('Register page', () => {
     it('should click login button',  () => {
         const element = $('form button[type="submit"]');
         element.click();
-        browser.pause(1000)
+        browser.pause(5000)
     });
 });
 
-    /*------------------------------------------------*/
- describe('Confirmation register page', () => {
-    it('should have a correct title', () => {
-        const actualH1Text = $('h1').getText();
-        const expectedH1Text = pageConfirmation.h1;
-        expect(actualH1Text).equal(expectedH1Text);
-        browser.pause(2000);
-    });
-
-});
+//     /*------------------------------------------------*/
+//  describe('Confirmation register page', () => {
+//     it('should have a correct title', () => {
+//         const actualH1Text = $('h1').getText();
+//         const expectedH1Text = pageConfirmation.h1;
+//         expect(actualH1Text).equal(expectedH1Text);
+//         browser.pause(2000);
+//     });
+//
+// });
 
 
 
