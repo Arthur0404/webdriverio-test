@@ -6,7 +6,7 @@ class dayReportPage extends Page {
         return browser.$('h1');
     }
     get submitBTN () {
-        return browser.$('//a[@class="btn btn-secondary"]');
+        return browser.$('//a[@qa="create-day-report-button"]');
     }
 
     open() {

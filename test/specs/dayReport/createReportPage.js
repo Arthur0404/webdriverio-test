@@ -2,6 +2,10 @@ import Page from "../Page";
 
 class createReportPage extends Page {
 
+    get diary (){
+        return browser.$('//div[@id="site-menu"]//a[@qa="diary-link"]')
+    }
+
     get h1(){
         return browser.$('h1')
     }
@@ -32,9 +36,6 @@ class createReportPage extends Page {
     get submitBTN(){
         return browser.$('//form//button[@type="submit"]')
     }
-
-
-
 
     open() {
         super.open('https://stage.pasv.us/diary/create');

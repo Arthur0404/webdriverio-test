@@ -15,8 +15,9 @@ describe('DAILY REPORTS', () => {
         expect(ProfilePage.h1.getText()).eq('Admin Adminov');
     });
 
-    it('should open daily report creation', () => {
-        dayReportPage.open();
+    it('should click top menu Diary', ()=>{
+        createReportPage.diary.click();
+        browser.pause(2000)
     });
 
     it('', () => {
@@ -73,5 +74,42 @@ describe('CREATE DAY REPORT', () => {
 
     it('should check how was your day', () => {
         createReportPage.summary.setValue('Today I passed an interview for a tester position with a good salary');
+    });
+
+    it('should ', () => {
+        const actual = browser.$(createReportPage.mark1).isDisplayed();
+        expect(actual).to.be.true;
+    });
+
+    it('should check if clickable button', () => {
+        createReportPage.mark1.click();
+    });
+
+    it('should check ', () => {
+        const actual = browser.$(createReportPage.mark2).isDisplayed();
+        expect(actual).to.be.true;
+    });
+
+    it('should check if clickable button ', () => {
+        createReportPage.mark2.click();
+    });
+
+    it('should check ', () => {
+        const actual = browser.$(createReportPage.mark3).isDisplayed();
+        expect(actual).to.be.true;
+    });
+
+    it('should check if clickable button ', () => {
+        createReportPage.mark3.click();
+    });
+
+    it('should save button', () => {
+        const actual = browser.$(createReportPage.submitBTN).isDisplayed();
+        expect(actual).to.be.true;
+    });
+
+    it('should save button', () => {
+        createReportPage.submitBTN.click();
+        browser.pause(5000);
     });
 });
