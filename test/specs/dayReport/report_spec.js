@@ -1,15 +1,24 @@
 import { expect } from 'chai';
 import dayReportPage from "./dayReportPage";
 import LoginPage from "../login/LoginPage";
-import RegistrationPage from "../Registration/RegistrationPage";
+import ProfilePage from "../profile/ProfilePage";
+import createReportPage from "./createReportPage";
 
-describe('DAILY REPORTS', ()=> {
-    before( () => {
+
+describe('DAILY REPORTS', () => {
+    before(() => {
         LoginPage.login();
     });
-    it('should open daily report creation', ()=> {
+
+    it('should go to profile Page',() => {
+        browser.pause(5000);
+        expect(ProfilePage.h1.getText()).eq('Admin Adminov');
+    });
+
+    it('should open daily report creation', () => {
         dayReportPage.open();
     });
+
     it('', () => {
         const actual = dayReportPage.h1.getText();
         const expected = 'Daily reports';
@@ -17,11 +26,52 @@ describe('DAILY REPORTS', ()=> {
     });
 
     it('must check the daily report button', () => {
-        const actual = browser.$(dayReportPage.createDayReport).isDisplayed();
+        const actual = browser.$(dayReportPage.submitBTN).isDisplayed();
         expect(actual).to.be.true;
     });
-    it('', () => {
-        dayReportPage.createDayReport.click();
-        browser.pause(3000);
+
+    it('should check if the button is clickable', () => {
+        dayReportPage.submitBTN.click();
+        browser.pause(2000);
+    });
+});
+
+describe('CREATE DAY REPORT', () => {
+    it('must check the creation of a daily report', ()=>{
+        const actual = createReportPage.h1.getText();
+        const expected = 'Create day report';
+        expect(actual).eq(expected);
+    });
+
+    it('check the header of the daily report mark', ()=>{
+        const actual = browser.$(createReportPage.Marks).isDisplayed();
+        expect(actual).to.be.true;
+    });
+
+    it('should check modal window if morale is displayed', () => {
+        const actual = browser.$(createReportPage.morale).isDisplayed();
+        expect(actual).to.be.true;
+    });
+
+    it('should check morale', () => {
+        createReportPage.morale.selectByVisibleText('10 – I am pleased with everything!');
+    });
+
+    it('should check if the modal window is displayed how many hours he studied', () => {
+        const actual = browser.$(createReportPage.hours).isDisplayed();
+        expect(actual).to.be.true;
+    });
+
+    it('should check how many hours he studied', ()=> {
+        createReportPage.hours.setValue('8');
+    });
+
+    it('should check how was your day', () => {
+        const actual = browser.$(createReportPage.summary).isDisplayed();
+        expect(actual).to.be.true;
+    });
+
+    it('should check how was your day', () => {
+        createReportPage.summary.setValue('Today I passed an interview for a tester position with a good salary');
     });
 });

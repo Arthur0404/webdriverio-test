@@ -22,7 +22,7 @@ class LoginPage extends Page{
          this.email.setValue('admin@test.com');
          this.password.setValue('11111');
          this.submitBTN.click();
-         browser.pause(5000);
+
     }
 
     open() {
