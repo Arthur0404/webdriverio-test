@@ -3,7 +3,6 @@ import LoginPage from "../login/LoginPage";
 import {expect} from "chai";
 import ProfilePage from "../profile/ProfilePage";
 
-
 describe('FLASH GROUP CREATE', () => {
     before(() => {
         LoginPage.login();
@@ -81,5 +80,4 @@ describe('FLASH GROUP CREATE', () => {
         flashGroupPage.createdGroup.click();
         browser.pause(3000);
     });
-
 });

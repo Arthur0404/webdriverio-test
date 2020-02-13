@@ -17,7 +17,7 @@ describe('DAILY REPORTS', () => {
 
     it('should click top menu Diary', ()=>{
         createReportPage.diary.click();
-        browser.pause(2000)
+        browser.pause(2000);
     });
 
     it('', () => {

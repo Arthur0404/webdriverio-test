@@ -35,7 +35,7 @@ class flashGroupPage extends  Page {
     get createdGroup (){
         return browser.$('//div[@qa="flash-group-list "]//h4/a')
     }
-    get
+
 
 
 
