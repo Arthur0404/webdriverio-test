@@ -80,4 +80,5 @@ describe('FLASH GROUP CREATE', () => {
         flashGroupPage.createdGroup.click();
         browser.pause(3000);
     });
+
 });
