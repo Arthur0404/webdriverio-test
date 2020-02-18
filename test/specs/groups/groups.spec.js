@@ -84,3 +84,87 @@ describe('GROUPS', () => {
         browser.pause(2000);
     });
 });
+
+     describe('NEW GROUP', () => {
+         it('should check if a new group has been created',() => {
+             const actual = browser.$(groupsPage.newGroupBTN).isDisplayed();
+             expect(actual).to.be.true;
+         });
+          it('should check if a new group has been created', () => {
+              groupsPage.newGroupBTN.click();
+              browser.pause(5000);
+          });
+
+          it('should ', ()=> {
+              const actual = browser.$(groupsPage.editBTN).isDisplayed();
+              expect(actual).to.be.true;
+          });
+
+          it('should', () => {
+              groupsPage.editBTN.click();
+              browser.pause(5000);
+          });
+
+          it('should', () => {
+              const actual = browser.$(groupsPage.editGroupH1).isDisplayed();
+              expect(actual).to.be.true;
+          });
+
+          it('should', () => {
+              const actual = groupsPage.editGroupH1.getText();
+              const expected = 'Edit Group';
+              expect(actual).eq(expected);
+          });
+
+         it('should check the name of the group', () => {
+             const actual = browser.$(groupsPage.editNameGroup).isDisplayed();
+             expect(actual).to.be.true;
+         });
+         //
+         // it('should name group', () => {
+         //     const actual = groupsPage.editNameGroup.getText();
+         //     const expected = 'QA 5 new Group';
+         //     expect(actual).eq(expected);
+         // });
+
+         it('should description group', () => {
+             const actual = browser.$(groupsPage.editDescriptionGroup).isDisplayed();
+             expect(actual).to.be.true;
+         });
+
+         it('should description group', ()=> {
+             groupsPage.editDescriptionGroup.getText('group created to improve programming skills');
+         });
+
+         it('should access type', () => {
+             const actual= browser.$(groupsPage.editAccess).isDisplayed();
+             expect(actual).to.be.true;
+         });
+
+         it('should access type', () => {
+             groupsPage.editAccess.selectByVisibleText('Members');
+         });
+
+         it('should WebHook', () => {
+             const actual = browser.$(groupsPage.editWebHook).isDisplayed();
+             expect(actual).to.be.true;
+         });
+
+         it('should WebHook', () => {
+             groupsPage.editWebHook.setValue('Yandex web service designed to translate part of a text or web page into another language.')
+         });
+
+         it('should add Quiz', () => {
+             const actual = browser.$(groupsPage.AddQuiz).isDisplayed();
+             expect(actual).to.be.true;
+         });
+
+         it('should Add Quiz', () => {
+             groupsPage.AddQuiz.setValue('The service uses a self-learning statistical machine translation algorithm')
+         });
+        it('should', () => {
+            const actual = browser.$(groupsPage.users).isDisplayed();
+            expect(actual).to.be.true;
+        });
+     });
+

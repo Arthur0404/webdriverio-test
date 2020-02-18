@@ -36,10 +36,59 @@ class groupsPage extends Page {
         return browser.$('//div[@qa="group-list-item"]//h4/a')
     }
 
+    get newGroupBTN(){
+        return browser.$('//h4[@qa="group-name"]//a')
+    }
+
+    get editBTN(){
+        return browser.$('//a[@qa="edit-button"]')
+    }
+
+    get editGroupH1(){
+        return browser.$('//h1')
+    }
+
+    get editNameGroup(){
+        return browser.$('//input[@name="name"]')
+    }
+
+    get editDescriptionGroup(){
+        return browser.$('//textarea[@name="description"]')
+    }
+    get editAccess(){
+        return browser.$('//select[@name="accessType"]')
+    }
+    get editWebHook(){
+        return browser.$('//input[@name="slackWebhook"]')
+    }
+
+    get AddQuiz(){
+        return browser.$('//input[@name="searchQuiz"]')
+    }
+
+    get users(){
+        return browser.$('//div[@class="form-group"]//h3')
+    }
+
+
+
+
+
+
+
 
     open() {
         super.open('https://stage.pasv.us/group');
     }
 }
+
+
+
+
+
+
+
+
+
 
 export default new groupsPage();
