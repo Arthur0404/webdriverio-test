@@ -20,7 +20,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*.spec.js'
+        './modules/**/*.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -67,7 +67,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'silent',
     //
     // Set specific log levels per logger
     // loggers:
@@ -130,8 +130,8 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        compilers: ['js:@babel/register'],
-        timeout: 60000
+        timeout: 60000,
+        compilers: ['js:@babel/register']
     },
     //
     // =====
@@ -163,6 +163,10 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
+    before: function (capabilities, specs) {
+        require('@babel/register');
+        expect = require('chai').expect;
+    },
     // before: function (capabilities, specs) {
     // },
     /**
