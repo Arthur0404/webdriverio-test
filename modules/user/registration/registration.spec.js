@@ -1,7 +1,6 @@
 import RegistrationPage from "../../_page/RegistrationPage";
 import HomePage from "../../_page/HomePage";
 import Notification from "../../_page/Notification";
-import {urlData} from "../../_data/url_data";
 import {newUserData, pageRegisterData, successfulNotificationData} from "../../_data/registration.data";
 
  describe('USER REGISTRATION', () => {
