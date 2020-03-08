@@ -2,6 +2,8 @@ import RegistrationPage from "../../_page/RegistrationPage";
 import HomePage from "../../_page/HomePage";
 import Notification from "../../_page/Notification";
 import {newUserData, pageRegisterData, successfulNotificationData} from "../../_data/registration.data";
+import {expect} from "chai";
+import axios from 'axios';
 
  describe('USER REGISTRATION', () => {
        before('should open Home Page, click button `Registration` ' +
@@ -121,4 +123,18 @@ import {newUserData, pageRegisterData, successfulNotificationData} from "../../_
             const expected = successfulNotificationData.successfulNotification;
             expect(action).eq(expected);
           });
+
+         it('should verify from DB user by email', async () => {
+           const response = await axios({
+             method: 'get',
+             url: `https://server-stage.pasv.us/user/email/${newUserData.email}`,
+             headers: {
+               Authorization: process.env.ADMIN_TOKEN,
+             },
+           })
+             .then(res => res)
+             .catch(err => err);
+           expect(response.status).eq(200);
+           expect(response.data.payload.name).eq(`${newUserData.firstName} ${newUserData.lastName}`);
+         });
      });
