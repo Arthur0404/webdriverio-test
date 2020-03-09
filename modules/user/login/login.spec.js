@@ -3,6 +3,8 @@ import loginPage from "../../_page/loginPage";
 import Menu from "../../_page/Menu";
 import HomePage from "../../_page/HomePage";
 import { student } from "../../_data/user_data";
+import {newUserData} from "../../_data/registration.data";
+import axios from 'axios';
 
  describe('LOGIN PAGE --POSITIVE', () => {
          before(() => {

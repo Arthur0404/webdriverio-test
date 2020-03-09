@@ -131,6 +131,7 @@ import axios from 'axios';
              headers: {
                Authorization: process.env.ADMIN_TOKEN,
              },
+
            })
              .then(res => res)
              .catch(err => err);

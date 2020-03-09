@@ -121,6 +121,5 @@ import {testEmails, pagePswRecovery} from "../_data/recoveryPassword.data";
             const expected = pagePswRecovery.urlResetPsw;
             expect(actual).eq(expected);
             browser.pause(5000);
-
            });
  });
