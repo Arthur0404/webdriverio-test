@@ -7,7 +7,6 @@ import Notification from "./Notification";
     get h1() {
       return browser.$('//h1');
     }
-
     get warningAboutFictionsProfile() {
       return browser.$('//p');
     }
