@@ -12,6 +12,5 @@ const {expect} = require('chai');
             browser.$('//h4[contains(text(), "Timeline")]').click();
             browser.$('//button[@id="navigation__dropdown-toggle-solutions"]').click();
          });
-
  });
 
