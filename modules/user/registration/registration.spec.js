@@ -117,7 +117,6 @@ import axios from 'axios';
            RegistrationPage.submitBTN.click();
            browser.pause(3000);
          });
-
           it('should get successful notification about user registration in the system', () => {
             const action = Notification.title.getText();
             const expected = successfulNotificationData.successfulNotification;
