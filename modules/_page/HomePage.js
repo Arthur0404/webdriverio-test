@@ -23,5 +23,4 @@ class HomePage extends AppPage {
   }
 
 }
-
 export default new HomePage();
