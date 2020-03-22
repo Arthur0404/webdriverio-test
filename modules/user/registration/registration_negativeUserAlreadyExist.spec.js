@@ -13,4 +13,5 @@ import HomePage from "../../_page/HomePage";
            'and get notification `User with this e-mail exists`',() => {
            RegistrationPage.registrationUserAlreadyExist();
    });
+
      });
