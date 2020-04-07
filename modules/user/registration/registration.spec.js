@@ -122,7 +122,6 @@ import axios from 'axios';
             const expected = successfulNotificationData.successfulNotification;
             expect(action).eq(expected);
           });
-
          it('should verify from DB user by email', async () => {
            const response = await axios({
              method: 'get',
