@@ -5,7 +5,7 @@ import HomePage from "../../_page/HomePage";
          it('should open the homepage', () => {
             HomePage.open();
          })
-   it('should have correct Home Page title', () => {
-     expect(HomePage.title.getText()).eq('Progress Monitor');
-   });
+   // it('should have correct Home Page title', () => {
+   //   expect(HomePage.title.getText()).eq('Progress Monitor');
+   // });
      });

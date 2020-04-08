@@ -39,6 +39,7 @@ import axios from 'axios';
           RegistrationPage.firstNameInput.setValue(newUserData.firstName);
         });
 
+
         it('should fill out `Last Name` field', () => {
           const actual = browser.$(RegistrationPage.lastNameInput).isDisplayed();
           expect(actual).to.be.true;

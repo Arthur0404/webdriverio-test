@@ -15,7 +15,7 @@ class HomePage extends AppPage {
   }
 
   open() {
-    super.open('https://stage.pasv.us/');
+    super.open('https://docdoc.ru/');
   }
 
   get registrationLink(){
