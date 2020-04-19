@@ -1,80 +1,83 @@
 import AppPage from "./AppPage";
-import {newUserData} from "../_data/registration.data";
-import {userRegisterData} from "../_data/userAlreadyRegistreted.data";
-import Notification from "./Notification";
+import {newUser} from "../_data/userRegistration.data";
+import mainPage from "./mainPage";
 
   class RegistrationPage extends AppPage {
-    get h1() {
-      return browser.$('//h1');
-    }
-    get warningAboutFictionsProfile() {
-      return browser.$('//p');
-    }
 
     get firstNameInput() {
-      return browser.$('//form//input[@name="firstName"]');
+      return browser.$('[name="firstName"]');
     }
 
     get lastNameInput() {
-      return browser.$('//form//input[@name="lastName"]');
+      return browser.$('[name="lastName"]');
     }
 
     get cellPhoneNumberInput() {
-      return browser.$('//form//input[@name="phone"]');
+      return browser.$('[name="phone"]');
     }
 
     get emailInput() {
-      return browser.$('//form//input[@name="email"]');
+      return browser.$('[name="email"]');
     }
 
     get passwordInput() {
-      return browser.$('//form//input[@name="password"]');
+      return browser.$('[name="password"]');
     }
 
     get aboutInput() {
-      return browser.$('//form//textarea[@name="about"]');
+      return browser.$('[name="about"]');
     }
 
     get myGoalsInput() {
-      return browser.$('//form//textarea[@name="goals"]');
+      return browser.$('[name="goals"]');
+    }
+
+    get countryOption(){
+      return browser.$('[name="countryName"');
     }
 
     get englishLevelOption() {
-      return browser.$('//form//select[@name="englishLevel"]');
+      return browser.$('[name="englishLevel"]');
     }
 
     get submitBTN() {
-      return browser.$('//form//button[@type="submit"]');
+      return browser.$('[type="submit"]');
     }
 
-    registrationNewUser() {
-      this.firstNameInput.setValue(newUserData.firstName);
-      this.lastNameInput.setValue(newUserData.lastName);
-      this.cellPhoneNumberInput.setValue(newUserData.phone);
-      this.emailInput.setValue(newUserData.email);
-      this.passwordInput.setValue(newUserData.password);
-      this.aboutInput.setValue(newUserData.about);
-      this.myGoalsInput.setValue(newUserData.goals);
-      this.englishLevelOption.selectByVisibleText(newUserData.englishLevel);
-      this.submitBTN.click();
-      browser.waitUntil(() => this.h1.isDisplayed());
-
+    open() {
+      super.open('https://stage.pasv.us/user/register');
     }
 
-    registrationUserAlreadyExist() {
-      this.firstNameInput.setValue(newUserData.firstName);
-      this.lastNameInput.setValue(newUserData.lastName);
-      this.cellPhoneNumberInput.setValue(newUserData.phone);
-      this.emailInput.setValue(newUserData.email);
-      this.passwordInput.setValue(newUserData.password);
-      this.aboutInput.setValue(newUserData.about);
-      this.myGoalsInput.setValue(newUserData.goals);
-      this.englishLevelOption.selectByVisibleText(newUserData.englishLevel);
-      this.submitBTN.click();
-      browser.waitUntil(() => {
-        return Notification.title.getText() === userRegisterData.notification
-      });
+    get requiredFieldList(){
+      return browser.$$('.invalid-feedback');
     }
+
+    get invalidInputMsg(){
+      return browser.$('//div[@class="invalid-feedback"]')
+    }
+
+    get warningRedFrameList(){
+      return browser.$$('.is-invalid')
+    }
+
+    // method for create new user
+    registerNewUser() {
+      this.firstNameInput.setValue(newUser.firstName);
+      this.lastNameInput.setValue(newUser.lastName);
+      this.cellPhoneNumberInput.setValue(newUser.phone);
+      this.emailInput.setValue(newUser.email);
+      this.passwordInput.setValue(newUser.password);
+      this.aboutInput.setValue(newUser.about);
+      this.myGoalsInput.setValue(newUser.goals);
+      this.countryOption.selectByVisibleText(newUser.country);
+      this.englishLevelOption.selectByVisibleText(newUser.englishLevel);
+      mainPage.smartClick(this. submitBTN);
+    }
+    verifyFieldHigtligthInRed(index){
+      mainPage.header.click();
+      browser.waitUntil(() => this.warningRedFrameList[index].isDisplayed() === true,
+        5000, `Field index[${index}] did't highligth in red`);
+       }
   }
 
   export default new RegistrationPage();
