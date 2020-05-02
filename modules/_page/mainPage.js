@@ -23,5 +23,4 @@ class mainPage extends  AppPage {
     selector.click();
   }
 }
-
 export default new mainPage();
