@@ -9,7 +9,6 @@ class mainPage extends  AppPage {
   get p(){
     return browser.$('//p')
   }
-
    verifyTitle (title){
     expect(browser.getTitle()).equal(title);
   }
