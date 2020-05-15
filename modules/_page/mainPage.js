@@ -9,10 +9,6 @@ class mainPage extends  AppPage {
   get p(){
     return browser.$('//p')
   }
-   verifyTitle (title){
-    expect(browser.getTitle()).equal(title);
-  }
-
   verifyElementText(element,text){
     browser.waitUntil(() => element.getText() === text, 5000, "Doesn't match Text");
   }
