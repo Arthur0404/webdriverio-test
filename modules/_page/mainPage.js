@@ -5,7 +5,6 @@ class mainPage extends  AppPage {
   get header(){
     return browser.$('//h1');
   }
-
   get p(){
     return browser.$('//p')
   }
