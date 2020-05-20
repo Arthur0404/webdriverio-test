@@ -11,7 +11,6 @@ class mainPage extends  AppPage {
   verifyElementText(element,text){
     browser.waitUntil(() => element.getText() === text, 5000, "Doesn't match Text");
   }
-
   smartClick(selector){
     selector.waitForClickable();
     selector.click();
